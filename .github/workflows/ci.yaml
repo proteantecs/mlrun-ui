@@ -91,12 +91,12 @@ jobs:
       - name: Build Docker image
         id: build
         run: |
-          docker build -t proteantecs/mlrun-ui-pt:${{ github.sha }} . > build.log 2>&1 || (cat build.log; exit 1)
+          docker build -t proteantecs/mlrun-ui:1.9.2-${{ github.sha }} . > build.log 2>&1 || (cat build.log; exit 1)
 
       - name: Push Docker image
         if: success()
         run: |
-          docker push proteantecs/mlrun-ui-pt:${{ github.sha }}
+          docker push proteantecs/mlrun-ui:1.9.2-${{ github.sha }}
 
       - name: Check for igz-controls error message
         id: check-error
