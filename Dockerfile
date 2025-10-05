@@ -35,7 +35,7 @@ RUN echo ${COMMIT_HASH} > ./build/COMMIT_HASH && \
     echo ${DATE} > ./build/BUILD_DATE
 
 # production stage
-FROM nginxinc/nginx-unprivileged:1.29.0-alpine3.22 as production-stage
+FROM nginxinc/nginx-unprivileged:1.29.1-alpine3.22 as production-stage
 
 # align UID & GID with nginx-unprivileged image UID & GID
 ARG UID=101
