@@ -33,7 +33,7 @@ ARG DATE
 RUN echo ${COMMIT_HASH} > ./build/COMMIT_HASH && \
     echo ${DATE} > ./build/BUILD_DATE
 
-# production stage
+# production stage CVE free
 FROM gcr.io/nginxinc/nginx-unprivileged:1.29.1-alpine3.22 as production-stage
 
 # align UID & GID with nginx-unprivileged image UID & GID
